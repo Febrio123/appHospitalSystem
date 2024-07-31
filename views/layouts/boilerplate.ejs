@@ -5,10 +5,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boilerplate</title>
+  <title><%= data.title %></title>
   <link rel="stylesheet" href="/public/css/fontawesome.css">
   <link rel="stylesheet" href="/public/css/solid.css">
   <script src="https://cdn.tailwindcss.com"></script>
+
   
 </head>
 <body class="h-screen">
@@ -26,7 +27,7 @@
   
   <main class="flex flex-row">
     <aside class="h-[calc(100vh-5rem)] w-60 bg-teal-100 shadow-2xl">
-      <nav class="flex flex-col h-full items-center pt-10">      
+      <!-- <nav class="flex flex-col h-full items-center pt-10">      
       <a href="#" class="h-14 w-full leading-[3.5rem] border-l-4 border-amber-600 bg-[rgba(0,0,0,0.1)]" id="sidebarLink">
         <i class="fa-solid fa-calendar-days px-3"></i>Penjadwalan</a>
       <a href="#" class="h-14 w-full leading-[3.5rem] border-l-4" id="sidebarLink">
@@ -42,7 +43,19 @@
 
       <a href="#" class="h-14 w-full mt-auto leading-[3.5rem] bg-red-600 text-white border-l-[2px] border-red-600">
         <i class="fa-solid fa-power-off px-3"></i>Logout</a>
+      </nav> -->
+    
+      <nav class="flex flex-col h-full items-center pt-10">
+
+        <%# Loop navLink dan cek jika halaman aktif %>
+        <% data.navLink.forEach(item => { %>
+          <a href="<%= item.link %>" class="h-14 w-full leading-[3.5rem] border-l-4 <%= item.isLogout ? 'mt-auto bg-red-600 text-white border-l-[2px] border-red-600' : '' %> <%= data.title === item.text ? 'border-amber-600 bg-[rgba(0,0,0,0.1)]' : '' %>
+          ">
+            <i class="<%= item.icon %> px-3"></i><%= item.text %>
+          </a>
+        <% }); %>
       </nav>
+
     </aside>
 
     <%- body -%>
@@ -50,8 +63,6 @@
   </main>
 
 </body>
-
-<script src="../public/javascripts/boilerplate.js"></script>
 
 </html>
 

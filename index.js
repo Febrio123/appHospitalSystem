@@ -8,8 +8,9 @@ const dotenv = require('dotenv')
 const app = express()
 // const rolesRoutes = require('./routes/roleRoutes')
 // const userRoutes = require('./routes/authRoutes')
-const { isLoggedIn } = require('./middleware/authMiddleware');
+const { isLoggedIn } = require('./middleware/authMiddleware')
 // const { errorHandler, notFound } = require('./middleware/errorMiddleware')
+
 
 // view engine
 app.engine('ejs', ejsMate)
@@ -38,8 +39,7 @@ app.use('/public' ,express.static(path.join(__dirname, 'public')))
 // })
 
 
-
-const navLink = [
+const navLink= [
     { icon: 'fa-solid fa-calendar-days', text: 'Penjadwalan', link: '/penjadwalan' },
     { icon: 'fa-solid fa-notes-medical', text: 'Riwayat Pasien', link: '/riwayatPasien' },
     { icon: 'fa-solid fa-flask-vial', text: 'Hasil Lab', link: '/hasilLab' },
@@ -48,11 +48,6 @@ const navLink = [
     { icon: 'fa-solid fa-power-off', text: 'Logout', isLogout: true }
   ];
 
-// app.use((req, res, next) => {
-//     const roles = roles;
-
-//     next();
-// })
 
 app.get('/login',(req, res) => {
     res.render('login')
@@ -62,8 +57,10 @@ app.get('/login',(req, res) => {
 app.get('/penjadwalan', isLoggedIn,(req, res) => {
     const data = {
         "title": "Penjadwalan",
-        "navLink": navLink
+        "navLink": [navLink[0], navLink[4], navLink[5]]
     }
+
+    console.log(navLink);
     res.render('penjadwalan', {data})
 })
 

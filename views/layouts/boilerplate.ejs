@@ -1,0 +1,57 @@
+<!-- TODO: Dropdown banh -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boilerplate</title>
+  <link rel="stylesheet" href="/public/css/fontawesome.css">
+  <link rel="stylesheet" href="/public/css/solid.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+</head>
+<body class="h-screen">
+  <header class="w-full h-20 bg-stone-800 flex items-center">
+    <img src="/public/img/LOGO UNDIRA.png" alt="logo" class="h-4/5 ml-3">
+
+    <div class="flex flex-row ml-auto mr-24 items-center gap-5 text-white">
+      <i class="fa-solid fa-user text-4xl"></i>
+      <p>Ryo Marchellino</p>
+    </div>
+
+
+    
+  </header>
+  
+  <main class="flex flex-row">
+    <aside class="h-[calc(100vh-5rem)] w-60 bg-teal-100 shadow-2xl">
+      <nav class="flex flex-col h-full items-center pt-10">      
+      <a href="#" class="h-14 w-full leading-[3.5rem] border-l-4 border-amber-600 bg-[rgba(0,0,0,0.1)]" id="sidebarLink">
+        <i class="fa-solid fa-calendar-days px-3"></i>Penjadwalan</a>
+      <a href="#" class="h-14 w-full leading-[3.5rem] border-l-4" id="sidebarLink">
+        <i class="fa-solid fa-notes-medical px-3"></i>Riwayat Pasien</a>
+      <a href="#" class="h-14 w-full leading-[3.5rem] border-l-4" id="sidebarLink">
+        <i class="fa-solid fa-flask-vial px-3"></i>Hasil Lab</a>
+      <a href="#" class="h-14 w-full leading-[3.5rem] border-l-4" id="sidebarLink">
+        <i class="fa-solid fa-pills px-3"></i>Medikasi</a>
+      <a href="#" class="h-14 w-full leading-[3.5rem] border-l-4" id="sidebarLink">
+        <i class="fa-solid fa-money-bill-wave px-3"></i>Tagihan & Pembayaran</a>
+
+
+
+      <a href="#" class="h-14 w-full mt-auto leading-[3.5rem] bg-red-600 text-white border-l-[2px] border-red-600">
+        <i class="fa-solid fa-power-off px-3"></i>Logout</a>
+      </nav>
+    </aside>
+
+    <%- body -%>
+
+  </main>
+
+</body>
+
+<script src="../public/javascripts/boilerplate.js"></script>
+
+</html>
+
